@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+NODEPATH="$HOME/.nvm/versions/node/current/bin" # set path to your node/tsc
+
+export TSC="$NODEPATH/tsc"
+export NODE="$NODEPATH/node"
+
+TSCFILE=$1 # only parameter is the name of the ts file you created.
+
+function show_usage() {
+    echo "ts2node [ts file]"
+    exit 0
+}
+
+if [ "$TSCFILE" == "" ]
+then
+    show_usage;
+fi
+
+JSFILE="$(echo $TSCFILE|cut -d"." -f 1).js"
+
+$TSC $TSCFILE && $NODE $JSFILE

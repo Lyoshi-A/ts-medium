@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "alwaysStrict": true,
+    "target": "es6",
+    "lib": [ "dom", "es6" ],
+    "noImplicitAny": true,
+    "moduleResolution": "node",
+    "removeComments": true,
+    "sourceMap": true,
+    "baseUrl": ".",
+    "paths": {
+      "*": [
+        "node_modules/*"
+      ]
+    }
+  },
+  "exclude": [
+    "./src/setupTests.ts",
+    "**/__tests__/*"
+  ],
+}
